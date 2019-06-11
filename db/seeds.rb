@@ -4,4 +4,5 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  User.create(name: 'username',email:'admin@gmail.com', password: 1234567,)
+  Wallet.create(name: 'Default',currency:'Dollar', limit: 1000,cash_or_credit:'Cash',total:0,user_id:1)

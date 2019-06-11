@@ -34,12 +34,12 @@ class Reports extends Component {
 		if(this.props.expenses){
 			this.props.expenses.map(operation=>operation.map(data=>dataExpense.push({value:data.amount,label:data.name,color:'red',highlight: "#C69CBE"})));
 		}else{
-			dataExpense.push({value:10,label:"You don't have expenses"})
+			dataExpense.push({value:0.1,label:"You don't have expenses"})
 		}
 		if(this.props.incomes){
 			this.props.incomes.map(operation=>operation.map(data=>dataIncome.push({value:data.amount,label:data.name,color: "blue",highlight: "#C69CBE"})));
 		}else{
-			dataIncome.push({value:10,label:"You don't have incomes"})
+			dataIncome.push({value:0.1,label:"You don't have incomes"})
 		}
 		dataBalance.push({value:this.sum('value',dataExpense),label:'Expense'})
 		dataBalance.push({value:this.sum('value',dataIncome),label:'Incomes'})

@@ -29,7 +29,7 @@ class MyAccount extends Component {
         <h3>
           {(this.sum(incomes) - this.sum(expenses))>0? 
             `You are in a good place your income is more than expense on ${this.sum(incomes) - this.sum(expenses)}`:
-            `You have to work harder you currently in minus on ${this.sum(incomes) - this.sum(expenses)}`}
+            `You have to work harder your balance is ${this.sum(incomes) - this.sum(expenses)}`}
         </h3>
       </Segment>
     );

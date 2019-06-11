@@ -129,7 +129,7 @@ class App extends Component {
         name:'',
         category:'',
         amount:'0',
-        wallet_id:allWallets[0].id,
+        wallet_id:allWallets&&allWallets[0].id,
         description:'',
         type_of_operation:'Income',
         priority:'High',

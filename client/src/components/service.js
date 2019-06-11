@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'https://budget-app-sidgi.herokuapp.com';
 
 export const userCreate = async (data)=>{
   const obj = {"user":data};

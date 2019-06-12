@@ -1,47 +1,80 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://budget-app-sidgi.herokuapp.com';
+axios.defaults.baseURL = process.env.REACT_APP_HEROKU_URL;
 
 export const userCreate = async (data)=>{
-  const obj = {"user":data};
-  const newUser = await axios.post('/users/',obj);
-  return newUser;
+  try{
+    const obj = {"user":data};
+    const newUser = await axios.post('/users/',obj);
+    return newUser;
+  }catch(e){
+    console.log(e)
+  }
 }
 
 export const userLogin = async (data)=>{
-  const token = await  axios.post('/auth/login',data);
-  return token.data;
+  try{
+    const token = await  axios.post('/auth/login',data);
+    return token.data;
+  }catch(e){
+    console.log(e)
+  }
+
 }
 
 export const createOperation = async (data)=>{
-  const operation = await  axios.post('/operations',data);
-  return operation;
+  try{
+    const operation = await  axios.post('/operations',data);
+    return operation;
+  }catch(e){
+    console.log(e)
+  }
 }
 
 export const createWallet = async (data)=>{
-  const wallet = await  axios.post('/wallets',data);
-  return wallet;
+  try{
+    const wallet = await  axios.post('/wallets',data);
+    return wallet;
+  }catch(e){
+    console.log(e)
+  }
 }
 
 export const getAllWallets = async ()=>{
-  const obj = {"user":localStorage.getItem('user_id')};
-  const wallets = await axios.get(`/users/${localStorage.getItem('user_id')}`,obj);
-  return wallets.data;
+  try{
+    const obj = {"user":localStorage.getItem('user_id')};
+    const wallets = await axios.get(`/users/${localStorage.getItem('user_id')}`,obj);
+    return wallets.data;
+  }catch(e){
+    console.log(e)
+  }
 }
 
 export const getAllOperations = async ()=>{
-  const obj = {"user":localStorage.getItem('user_id')};
-  const user = await axios.get(`/users/${localStorage.getItem('user_id')}`,obj);
-  return user.data;
+  try{
+    const obj = {"user":localStorage.getItem('user_id')};
+    const user = await axios.get(`/users/${localStorage.getItem('user_id')}`,obj);
+    return user.data;
+  }catch(e){
+    console.log(e)
+  }
 }
 
 export const deleteOperation = async (e,id)=>{
-  e.preventDefault();
-  const deletedIncome = await  axios.delete(`/operations/${id}`,id);
-  return deletedIncome.data;
+  try{
+    e.preventDefault();
+    const deletedIncome = await  axios.delete(`/operations/${id}`,id);
+    return deletedIncome.data;
+  }catch(e){
+    console.log(e)
+  }
 }
 
 export const editOperation = async (data) =>{
-  const editedOperations = await axios.put(`/operations/${data.id}`,data);
-  return editedOperations.data;
+  try{
+    const editedOperations = await axios.put(`/operations/${data.id}`,data);
+    return editedOperations.data;
+  }catch(e){
+    console.log(e)
+  }
 }

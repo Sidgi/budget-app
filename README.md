@@ -137,5 +137,7 @@ An explanation of the major challenges expected while building this app and how 
 
 ### Deployment
 This project's : 
-    * https://budget-app-sidgi.herokuapp.com/ - back-end deployed on Heroku.com 
-    * http://budget-app-sidgi.surge.sh  front-end deployed on Surge. 
+
+    *  https://budget-app-sidgi.herokuapp.com/ - back-end deployed on Heroku.com 
+    
+    *  http://budget-app-sidgi.surge.sh  front-end deployed on Surge. 

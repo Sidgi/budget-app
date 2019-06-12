@@ -8,7 +8,7 @@ export const userCreate = async (data)=>{
     const newUser = await axios.post('/users/',obj);
     return newUser;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 }
 
@@ -17,7 +17,7 @@ export const userLogin = async (data)=>{
     const token = await  axios.post('/auth/login',data);
     return token.data;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 
 }
@@ -27,7 +27,7 @@ export const createOperation = async (data)=>{
     const operation = await  axios.post('/operations',data);
     return operation;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 }
 
@@ -36,7 +36,7 @@ export const createWallet = async (data)=>{
     const wallet = await  axios.post('/wallets',data);
     return wallet;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 }
 
@@ -46,7 +46,7 @@ export const getAllWallets = async ()=>{
     const wallets = await axios.get(`/users/${localStorage.getItem('user_id')}`,obj);
     return wallets.data;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 }
 
@@ -56,7 +56,7 @@ export const getAllOperations = async ()=>{
     const user = await axios.get(`/users/${localStorage.getItem('user_id')}`,obj);
     return user.data;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 }
 
@@ -66,7 +66,7 @@ export const deleteOperation = async (e,id)=>{
     const deletedIncome = await  axios.delete(`/operations/${id}`,id);
     return deletedIncome.data;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 }
 
@@ -75,6 +75,6 @@ export const editOperation = async (data) =>{
     const editedOperations = await axios.put(`/operations/${data.id}`,data);
     return editedOperations.data;
   }catch(e){
-    console.log(e)
+    console.log(e.message)
   }
 }
